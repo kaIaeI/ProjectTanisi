@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbyfxp71f166d"]
+
+[ext_resource type="Theme" uid="uid://byi38q23oj3ta" path="res://GenericScenes/Themes/ButtonTheme.tres" id="1_h6bgr"]
+[ext_resource type="FontFile" uid="uid://b8urr5fupfkes" path="res://GenericScenes/Themes/Fonts/static/Baloo2-Bold.ttf" id="2_dvlds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6u7c"]
+bg_color = Color(0.46666667, 0.46666667, 0.46666667, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 135.0
+offset_right = 990.0
+offset_bottom = 586.0
+theme = ExtResource("1_h6bgr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxAB" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainerA" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxAB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxAB/MarginContainerA"]
+layout_mode = 2
+text = "This is where the question will be."
+
+[node name="HBoxCD" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainerC" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxCD"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ButtonC" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxCD/MarginContainerC"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_h6bgr")
+toggle_mode = true
+button_mask = 4
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxCD/MarginContainerC/ButtonC"]
+layout_mode = 0
+offset_right = 755.0
+offset_bottom = 174.0
+theme = ExtResource("1_h6bgr")
+theme_override_fonts/font = ExtResource("2_dvlds")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6u7c")
+placeholder_text = "Enter your text here."
+alignment = 1
+expand_to_text_length = true
